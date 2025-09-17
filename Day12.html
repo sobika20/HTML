@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //SET IN JAVA SCRIPT.
+        //a set is a collection of unique values.It automatically removes duplicates.
+
+        let email=new Set([]);
+        email.add("js@gmail.com");
+        email.add("java@gmail.com");
+        email.add("py@gmail.com");
+        email.add("py@gmail.com");
+        console.log(email)
+        //email.delete("py@gmail.com");
+        //console.log(email)
+        //email.clear()
+        //console.log(email)
+
+        for(let mailId of email){
+            console.log(mailId)
+        }
+        email.forEach(x=>{
+            console.log(x)
+        })
+        let admin=new Set(["write","read","delete"]);
+        let user=new Set(["read"]);
+
+        function haspermission(role,granted){
+            return role.has(granted)
+        }
+        console.log(haspermission(admin,"delete"));
+        console.log(haspermission(user,"delete"));
+
+        let SetA=new Set([1,2,3,4,5,1]);
+        let SetB=new Set([6,7,8,9,10,1]);
+
+        //union
+        let union=new Set([setA,setB])
+        console.log(union);
+
+        //intersection
+        let intersection=new Set([...setA].filter(x=>setB.has(x)));
+        console.logl(intersection)
+
+        //difference
+        let diff=new Set([...setA].filter(x=>!setB.has(x)));
+        console.logl(diff)
+
+        //entries
+            //return a new iterator object with[value,value]pairs.
+            //this is because a set has no separate keys-only values.
+
+            //example:
+                let fruits=new Set(["apple","banana"]);
+                let entries=fruits.entries();
+                for(let entry of entries){
+                    console.log(entry);
+                }
+
+        //weakMap
+                //a javascript weakmap is a collection of key/value pair
+                //where the key must be objects.
+
+    let user1={name:"java"};
+    let user2={name:"python"};
+    let mymap=new Map();
+    mymap.set(user1,"welcome");
+    mymap.set(user2,"welcome python!")
+    console.log(mymap);
+
+    for(let map of mymap){
+        console.log(map)
+    }
+    </script>
+    
+</body>
+</html>
